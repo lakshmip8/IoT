@@ -1,25 +1,28 @@
-.nav-item{
-    flex-basis:150px;
-    border-right:1px solid grey;
-    text-align: center;
-    line-height:15px;
-}
-
-li:hover{
-    background-color: grey;
-    color:white;
-}
-a{
-    color:grey;
-}
-a:hover{
-    color:white;
+.nav{
+    border:1px solid grey;
+    .nav-item{
+        flex-basis:150px;
+        border-right:1px solid grey;
+        text-align: center;
+        line-height:15px;
+        &:nth-child(4){
+            border-right:none;
+        }
+        .nav-link{
+            color:grey;
+            &:hover{
+                background-color: grey;
+                color:white;
+            }
+        }
+    }
+    
+    
 }
 ul{
-    border:1px solid grey;
     margin-top:15px;
     padding:3px;
 }
-.nav-item:nth-child(4){
-    border-right:none;
-}
+
+
+
