@@ -1,0 +1,86 @@
+
+ul{
+    list-style-type: none;
+    display:flex;
+    border: 1px solid grey;
+}
+a{
+    text-decoration: none;
+}
+
+.pull-right{
+    text-align: right;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.nav-link{
+    font-size:25px;
+    color:grey;
+}
+.nav-tabs{
+    border:none;
+}
+
+table{
+    border:1px solid grey;
+
+    th{
+        background-color: darkgrey;
+        color:white;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+.status-text{
+    font-size:30px;
+    color:black;
+    padding-right:5px;
+}
+h4{
+    margin:10px 0;
+}
+.flex-container{
+    display:flex;
+
+    div{
+        margin-right: 25px;
+    }
+}
+/* CSS used here will be applied after bootstrap.css */
+ul.nav-tabs{
+    padding: 0px;
+    
+    a{
+        color: grey;
+        font-size: 18px;
+        padding-right: 20px;
+
+    }
+    li{
+        &:first-child{
+            border-right: 2px solid grey;
+        }
+
+        &:nth-child(2){
+            padding-left: 15px;
+        }
+    }
+}
+
+ul.nav-tabs li a.active, ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover, ul.nav-tabs li.active a:focus, ul.nav-tabs li.active a:active{
+    border-color: transparent;
+    margin-bottom: -3px;
+    border-bottom: 3px solid grey;
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+.tab-pane {
+    margin-top: 5px;
+}

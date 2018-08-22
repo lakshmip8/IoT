@@ -1,0 +1,62 @@
+<div class="container pull-right">
+  <b>LAST REFRESHED:</b> {{ currentDate | date:'dd.MM.yy HH:mm'}}
+</div>
+<div class="container">
+<h4>Certificate Management</h4>
+  <div class="flex-container">
+    <div>
+      <span class="status-text">{{certificate.open}}</span>Open</div>
+    <div>
+      <span class="status-text">{{certificate.critical}}</span> Critical</div>
+    <div>
+      <span class="status-text">{{certificate.failed}}</span>Failed</div>
+    <div>
+      <span class="status-text">{{certificate.total}}</span>Total</div>
+    <div>
+      <span class="status-text">{{certificate.authenticated}}</span>Authenticated</div>
+  </div>
+</div>
+<div class="container tabbable margin-top">
+  <ul class="nav nav-tabs">
+    <li>
+      <a data-toggle="tab" href="#alarms">Alarms</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#jobStatus" class="active">Job Status</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div id="alarms" class="tab-pane">
+      <h3 class="center">Alarms</h3>
+    </div>
+    <div id="jobStatus" class="tab-pane active">
+      <table class="table">
+        <tr>
+          <th>
+            <input type="checkbox" (click)="selectAll($event.currentTarget.checked)"> </th>
+          <th>Job Name</th>
+          <th>Status</th>
+          <th>Firmware</th>
+          <th>NoDevices</th>
+          <th>Succeeded</th>
+          <th>Failed</th>
+          <th>START TIME</th>
+          <th>END TIME</th>
+        </tr>
+
+        <tr *ngFor="let jobStatus of jobStatuses">
+          <td>
+            <input type="checkbox" [checked]="jobStatus.selected"> </td>
+          <td>{{jobStatus.jobName}}</td>
+          <td>{{jobStatus.status}}</td>
+          <td>{{jobStatus.firmware}}</td>
+          <td>{{jobStatus.noDevices}}</td>
+          <td>{{jobStatus.succeeded}}</td>
+          <td>{{jobStatus.failed}}</td>
+          <td>{{jobStatus.startTime | date:'dd.MM.yy HH:mm'}}</td>
+          <td>{{jobStatus.endTime | date:'dd.MM.yy HH:mm'}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

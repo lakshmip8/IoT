@@ -1,0 +1,65 @@
+<div class="container">
+  <ul class="nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        All Devices
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 3</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 4</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 5</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Button 6</a>
+    </li>
+  </ul>
+</div>
+
+<div class="container pull-right">
+  <b>LAST REFRESHED:</b>{{ currentDate | date:'dd.MM.yy HH:mm'}}
+</div>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>
+        <input type="checkbox" (click)="selectAll($event.currentTarget.checked)"> </th>
+      <th>Device Name</th>
+      <th>Communication Type</th>
+      <th>Location</th>
+      <th>Firmware</th>
+      <th>Telemetry</th>
+      <th>Status</th>
+      <th>Last Connection</th>
+      <th>Authentication Status</th>
+    </tr>
+
+    <tr *ngFor="let device of devices">
+      <td>
+        <input type="checkbox" [checked]="device.selected"> </td>
+      <td>{{device.deviceName}}</td>
+      <td>{{device.communicationType}}</td>
+      <td>{{device.location}}</td>
+      <td>{{device.firmWare}}</td>
+      <td>{{device.telemetry}}</td>
+      <td>{{device.status}}</td>
+      <td>{{device.lastConnection}}</td>
+      <td>{{device.authStatus}}</td>
+    </tr>
+  </table>
+</div>
